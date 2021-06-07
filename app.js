@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 //Importing Routes
 const authRouter = require("./routes/auth");
-const fildUploadRouter = require("./routes/fileUploads")
+const fildUploadRouter = require("./routes/fileUploads");
 //App Middleware
 
 app.use(morgan("dev"));
@@ -36,9 +36,9 @@ const connectDB = async () => {
 connectDB();
 //Middleware
 app.use("/", authRouter);
-app.use("/", fildUploadRouter)
+app.use("/", fildUploadRouter);
 //Setting port number
-const port = process.env.PORT;
+const port = process.env.PORT || 3010;
 
 app.listen(port, () => {
   console.log(`The server is up and running on ${port}`);
