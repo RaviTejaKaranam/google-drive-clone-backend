@@ -18,7 +18,7 @@ exports.signUpController = (req, res) => {
     } else {
       if (err) {
         return res.status(400).json({
-          error: err,
+          error: "Something went wrong, Please try again",
         });
       } else {
         //Generating a token
