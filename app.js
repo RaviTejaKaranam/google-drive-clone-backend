@@ -21,6 +21,7 @@ dotenv.config({
 
 const connectDB = async () => {
   try {
+    console.log(process.env.mongodbUrl)
     const connection = await mongoose.connect(process.env.mongodbUrl, {
       useNewUrlParser: true,
       useCreateIndex: true,
