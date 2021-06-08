@@ -13,7 +13,7 @@ const fildUploadRouter = require("./routes/fileUploads");
 app.use(morgan("dev"));
 app.use(cors());
 app.use(bodyParser.json());
-console.log(dotenv.config({silent : true}));
+console.log(dotenv.config());
 
 //Connect to the database
 
