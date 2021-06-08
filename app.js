@@ -21,8 +21,8 @@ dotenv.config({
 
 const connectDB = async () => {
   try {
-    console.log(process.env.mongodbUrl)
-    const connection = await mongoose.connect((process.env.mongodbUrl || "mongodb+srv://root:root@cluster0.vza7a.mongodb.net/mern-auth?retryWrites=true&w=majority"), {
+    console.log(process.env.mongodbUrl);
+    const connection = await mongoose.connect(process.env.mongodbUrl, {
       useNewUrlParser: true,
       useCreateIndex: true,
       useFindAndModify: false,
