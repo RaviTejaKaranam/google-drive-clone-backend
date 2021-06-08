@@ -13,9 +13,7 @@ const fildUploadRouter = require("./routes/fileUploads");
 app.use(morgan("dev"));
 app.use(cors());
 app.use(bodyParser.json());
-dotenv.config({
-  path: "./config/.env",
-});
+dotenv.config();
 
 //Connect to the database
 
@@ -34,7 +32,6 @@ const connectDB = async () => {
   }
 };
 
-connectDB();
 //Middleware
 app.use("/", authRouter);
 app.use("/", fildUploadRouter);
@@ -44,3 +41,5 @@ const port = process.env.PORT || 3010;
 app.listen(port, () => {
   console.log(`The server is up and running on ${port}`);
 });
+
+connectDB();
