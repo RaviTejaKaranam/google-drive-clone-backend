@@ -11,6 +11,8 @@ const s3 = new aws.S3({
   Bucket: process.env.BUCKET_ARN,
 });
 
+console.log(process.env.AWS_ACCESS_KEY_ID)
+
 const fileUpload = multer({
   storage: multerS3({
     s3: s3,
